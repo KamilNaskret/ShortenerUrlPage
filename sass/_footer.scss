@@ -1,0 +1,41 @@
+.footer{
+    min-height:30vh;
+    display:grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 1fr;
+    padding:50px 120px 0;
+    background-color: #000;
+    color:white;
+    justify-items:center;
+    &__socials{
+        grid-column:6/7;
+        &-link{
+            margin:0 5px;
+            &:hover{
+                      filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(50deg) saturate(1000%) contrast(0.8);
+            }
+        }
+    }
+    &__company{
+        grid-column:5/6;
+        grid-row:1/7;
+        &-link{
+            @include footerLinks();
+        }
+    }
+    &__resources{
+        grid-column:4/5;
+        &-link{
+            @include footerLinks();
+        }
+    }
+    &__features{
+        grid-column:3/4;
+        &-link{
+            @include footerLinks();
+        }
+    }
+    &__logo{
+        filter:brightness(0) invert(1);
+    }
+}

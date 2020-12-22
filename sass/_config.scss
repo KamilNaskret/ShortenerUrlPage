@@ -1,0 +1,44 @@
+$fontSize:18px;
+
+$font-weights:(
+    "normal":400,
+    "medium":500,
+    "bold":700
+);
+
+$font-family:(
+    "main":"Poppins",
+    "second":"arial",
+    "serif":"sans-serif"
+);
+
+@mixin btn(){
+    border:none;
+    border-radius:50px;
+    padding:10px 20px;
+    color:hsl(0,0%,99%);
+    cursor:pointer;
+    background-color: hsl(180, 66%, 49%);
+    &:hover{
+        filter:brightness(110%);
+    }
+}
+@mixin footerLinks(){
+    display:block;
+    text-decoration:none;
+    margin:5px 0;
+    color:hsl(0,0%,55%);
+    &:hover{
+        color:hsl(180,66%,49%);
+    }
+}
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: map-get($font-family,main);
+    scroll-behavior: smooth;
+}

@@ -1,0 +1,19 @@
+.reater{
+    height:25vh;
+    background-image:url("../../images/bg-boost-desktop.svg");
+    background-color: hsl(257, 27%, 26%);
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    &__title{
+        font-size:$fontSize*2;
+        color:white;
+    }
+    &__btn{
+        @include btn();
+        margin-top:50px;
+        padding:15px 60px;
+        font-weight:map-get($font-weights,bold);
+    }
+}

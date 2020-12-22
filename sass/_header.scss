@@ -1,0 +1,45 @@
+.header{
+    height:10vh;
+    width:100%;
+    margin:0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    position:sticky;
+    top:0;
+    background-color: #fff;
+    z-index:1;
+    &__logo{
+        display:flex;
+    }
+    &__nav{
+        width:40%;
+    }
+    .nav__list{
+        display:flex;
+        list-style-type: none;
+    }
+    .nav__item{
+        margin:0 10px;
+        &-link{
+            text-decoration: none;
+            color:hsl(0, 0%, 35%);
+            &:hover{
+                color:hsl(0,0%,5%);
+            }
+        }
+    }
+    &__log{
+        &-link{
+            margin-right:20px;
+            text-decoration: none;
+            color:hsl(0,0%,35%);
+        }
+        &-btn{
+            @include btn();
+        }
+    }
+    .hamburger{
+        display:none;
+    }
+}
