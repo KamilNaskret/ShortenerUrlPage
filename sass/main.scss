@@ -153,5 +153,9 @@
     }
     .statistics__shortener{
         width:90%;
+        min-height:25vh;
+    }
+    .statistics__shortener .shortener__form-error{
+        left:50%;
     }
 }
