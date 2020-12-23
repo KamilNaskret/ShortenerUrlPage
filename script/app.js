@@ -27,7 +27,7 @@ class Shortener{
     }
     addUrl(value){
         this.url=value;
-        this.request=`https://api.shrtco.de/v2/shorten?url=${this.url}`
+        this.request=`https://api.shrtco.de/v2/shorten?url=${this.url}`;
         this.requestApi();
     }
     requestApi(){
