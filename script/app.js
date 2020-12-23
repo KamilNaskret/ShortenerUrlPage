@@ -40,23 +40,23 @@ class Shortener{
             });
     }
     intoHTML(){
+        const template = document.querySelector("#shortenerElement").content.cloneNode(true);
         const apiRequestList = document.querySelector(".statistics__api");
         const div = document.createElement("div");
         div.classList.add("statistics__api-result");
-        const template = document.querySelector("#shortenerElement").content.cloneNode(true);
         div.appendChild(template);
         div.querySelector(".statistics__api-url").innerHTML=this.url;
         div.querySelector(".statistics__api-shorturl").innerHTML=this.shortenerUrl;
         this.copy=div.lastElementChild;
         apiRequestList.appendChild(div);
-        this.copy();
+        this.copyUrl();
     }
-    copy(){
+    copyUrl(){
         this.copy.addEventListener('click',(e) => {
             document.querySelectorAll(".statistics__api-btn").forEach((el) => {
                 el.innerHTML="Copy";
                 el.style.backgroundColor=`hsl(180, 66%, 49%)`;
-            })
+            });
             const tempInput = document.createElement("input");
             document.body.appendChild(tempInput);
             tempInput.setAttribute('value',e.target.previousElementSibling.innerHTML);
@@ -72,7 +72,7 @@ class Shortener{
 }
 
 const form = document.querySelector(".shortener__form");
-const error = document.querySelector(".shortener__form-error");
+const error = document.querySelector(".statistics__shortener-error");
 
 
 
