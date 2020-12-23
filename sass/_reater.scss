@@ -1,14 +1,12 @@
 .reater{
+    display:flex;
+    @include flex(column,center,center);
     height:25vh;
     background-image:url("../../images/bg-boost-desktop.svg");
-    background-color: hsl(257, 27%, 26%);
-    display:flex;
-    align-items:center;
-    justify-content: center;
-    flex-direction: column;
+    background-color: map-get($bgcColors,darkVioletBgc);
     &__title{
         font-size:$fontSize*2;
-        color:white;
+        color:map-get($colors,whitec);
     }
     &__btn{
         @include btn();
@@ -17,7 +15,7 @@
         font-weight:map-get($font-weights,bold);
         a{
             text-decoration:none;
-            color:white;
+            color:map-get($colors,whitec);
         }
     }
 }

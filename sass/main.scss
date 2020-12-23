@@ -22,9 +22,9 @@
 @media(max-width:868px){
     .header{
         justify-content: space-between;
-    }
-    .header__logo{
-        margin-left:50px;
+        &__logo{
+            margin-left:50px;
+        }
     }
     .header .hamburger{
         display:block;
@@ -36,55 +36,50 @@
     }
     .header__nav{
         display:none;
-        position:absolute;
-        top:10vh;
-        left:0;
+        @include position(absolute,10vh,0);
+        height:15vh;
         width:100%;
         z-index:1;
-        height:15vh;
-        background-color: #1c1641;
-    }
-    .header__nav .nav__list{
-        flex-direction: column;
-        align-items:stretch;
-        justify-content: center;
-        height:100%;
-        z-index:1;
-    }
-    .header__nav .nav__item{
-        height:10vh;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-    }
-    .main__description{
-        width:80%;
-    }
-    .main__image img{
-        height:250px;
-    }
-    .main__title{
-        font-size:36px;
-    }
-    .main__btn{
-        margin:30px 0;
-    }
-    .header__nav{
-        display:none;
+        background-color: map-get($bgcColors,mobileNav);
+        .nav__list{
+            @include flex(column,stretch,center);
+            height:100%;
+            z-index:1;
+        }
+        .nav__item{
+            display:flex;
+            @include flex(row,center,center);
+            height:10vh;
+            &-link{
+                color:map-get($colors,whitec);
+            }
+        }
     }
     .header__log{
         display:none;
     }
-    .shortener__form{
+    .main__description{
+        width:80%;
+        .main__title{
+            font-size:$fontSize*2;
+        }
+        .main__btn{
+            margin:30px 0;
+        }
+    }
+    .main__image img{
+        height:250px;
+    }
+    .statistics__shortener .shortener__form{
         flex-direction: column;
         padding:10px 0;
-    }
-    .statistics__shortener .shortener__form-input{
-        width:100%;
-        margin-bottom:20px;
-    }
-    .statistics__shortener .shortener__form-btn{
-        margin-left:0;
+        &-input{
+            width:100%;
+            margin-bottom:20px;
+        }
+        &-btn{
+            margin-left:0;
+        }
     }
     .statistics__container::before{
         height:90%;
@@ -118,11 +113,10 @@
         margin-top:20px;
     }
     .footer{
-        padding:50px 20px;
         grid-template-columns: 1fr;
-        justify-items: center;
-        text-align: center;
         grid-row-gap:20px;
+        padding:50px 20px;
+        text-align: center;
         &__socials{
             grid-row:10/11;
             grid-column:1/2;
@@ -154,8 +148,8 @@
     .statistics__shortener{
         width:90%;
         min-height:25vh;
-    }
-    .statistics__shortener .shortener__form-error{
-        left:50%;
+        .shortener__form-error{
+            left:50%;
+        }
     }
 }

@@ -1,14 +1,13 @@
 .header{
+    display:flex;
+    position:sticky;
+    @include flex(row,center,space-around);
     height:10vh;
     width:100%;
-    margin:0 auto;
-    display:flex;
-    align-items: center;
-    justify-content: space-around;
-    position:sticky;
     top:0;
-    background-color: #fff;
     z-index:1;
+    margin:0 auto;
+    background-color: map-get($bgcColors, whiteBgc);
     &__logo{
         display:flex;
     }
@@ -23,7 +22,7 @@
         margin:0 10px;
         &-link{
             text-decoration: none;
-            color:hsl(0, 0%, 35%);
+            color:map-get($colors,info);
             &:hover{
                 color:hsl(0,0%,5%);
             }
@@ -33,7 +32,7 @@
         &-link{
             margin-right:20px;
             text-decoration: none;
-            color:hsl(0,0%,35%);
+            color:map-get($colors,info);
         }
         &-btn{
             @include btn();

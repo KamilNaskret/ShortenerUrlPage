@@ -6,11 +6,41 @@ $font-weights:(
     "bold":700
 );
 
+$colors:(
+    "whitec":#fff,
+    "error":hsl(0, 87%, 67%),
+    "url":hsl(180, 38%, 60%),
+    "info":hsl(0, 0%, 35%),
+    "title":hsl(260, 8%, 14%),
+    "headerColor":hsl(257, 27%, 26%),
+    "headerInfo":hsl(0, 0%, 55%)
+);
+
+$bgcColors:(
+    "grays":hsl(257, 7%, 90%),
+    "cyanBgc":hsl(180,38%,60%),
+    "whiteBgc":#fff,
+    "darkVioletBgc":hsl(257, 27%, 26%),
+    "mobileNav":#3b3054
+);
+
 $font-family:(
     "main":"Poppins",
     "second":"arial",
     "serif":"sans-serif"
 );
+
+@mixin flex($direction,$align,$justify){
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin position($direction,$top,$left){
+    position:$direction;
+    top:$top;
+    left:$left;
+}
 
 @mixin btn(){
     border:none;

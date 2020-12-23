@@ -1,10 +1,9 @@
 .main{
+    display:flex;
+    @include flex(row,center,space-between);
     min-height:60vh;
     width:100%;
     margin:0 auto 150px;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
     &__image{
         img{
             height:400px;
@@ -15,12 +14,12 @@
     }
     &__title{
         font-size:$fontSize*3;
-        color:hsl(257, 27%, 26%);
+        color:map-get($colors,headerColor);
     }
     &__information{
-        color:hsl(0, 0%, 75%);
-        font-size:$fontSize;
         width:90%;
+        color:map-get($colors,headerInfo);
+        font-size:$fontSize;
     }
     &__btn{
         @include btn();
@@ -29,7 +28,7 @@
         font-weight:map-get($font-weights,bold);
         a{
             text-decoration:none;
-            color:white;
+            color:map-get($colors,whitec);
         }
     }
 }
