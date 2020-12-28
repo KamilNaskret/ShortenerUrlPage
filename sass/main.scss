@@ -10,12 +10,18 @@
     .main{
         flex-direction:column;
         &__image{
+            animation:none;
             order:-1;
         }
         &__description{
             text-align:center;
             padding-left:0;
             width:70%;
+        }
+        &__title{
+            &::before{
+                display:none;
+            }
         }
     }
 }

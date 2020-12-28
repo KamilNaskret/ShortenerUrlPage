@@ -5,6 +5,7 @@
     width:100%;
     margin:0 auto 150px;
     &__image{
+        animation:moveImage 7s linear infinite;
         img{
             height:400px;
         }
@@ -13,8 +14,21 @@
         padding-left:120px;
     }
     &__title{
+        position:relative;
         font-size:$fontSize*3;
         color:map-get($colors,headerColor);
+        &::before{
+            content:'';
+            position:absolute;
+            top:0;
+            left:-5%;
+            display:block;
+            width:20%;
+            height:90%;
+            z-index:-1;
+            border-top:2px solid #000;
+            border-left:2px solid #000;
+        }
     }
     &__information{
         width:90%;
@@ -30,5 +44,22 @@
             text-decoration:none;
             color:map-get($colors,whitec);
         }
+    }
+}
+@keyframes moveImage{
+    0%{
+        transform:translateX(0);
+    }
+    25%{
+        transform:translateX(-50px);
+    }
+    50%{
+        transform:translateX(0);
+    }
+    75%{
+        transform:translateX(50px);
+    }
+    100%{
+        transform:translateX(0);
     }
 }
